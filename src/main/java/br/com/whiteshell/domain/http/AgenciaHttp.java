@@ -1,8 +1,10 @@
 package br.com.whiteshell.domain.http;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class AgenciaHttp {
     private String nome;
 
@@ -11,5 +13,4 @@ public class AgenciaHttp {
     private String cnpj;
 
     private SituacaoCadastralEnum situacaoCadastral;
-
 }

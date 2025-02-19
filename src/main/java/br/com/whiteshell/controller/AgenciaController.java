@@ -9,6 +9,8 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.UriInfo;
 import org.jboss.resteasy.reactive.RestResponse;
 
+import java.util.List;
+
 @Path("/agencias")
 public class AgenciaController {
 
@@ -21,6 +23,13 @@ public class AgenciaController {
         this.agenciaService.cadastrar(agencia);
 
         return RestResponse.created(uriInfo.getAbsolutePath());
+    }
+
+    @GET
+    public RestResponse<List<Agencia>> buscarTodas() {
+        List<Agencia> agencias = this.agenciaService.buscarTodas();
+
+        return RestResponse.ok(agencias);
     }
 
     @GET
