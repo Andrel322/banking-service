@@ -1,8 +1,8 @@
 # banking-service
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Rest API project created to study Quarkus, metrics with Prometheus and Grafana, deployment in docker and docker-compose
 
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
+This project depends on the banking-validator API (https://github.com/Andrel322/banking-validation) to work correctly.
 
 ## Running the application in dev mode
 
@@ -13,6 +13,14 @@ You can run your application in dev mode that enables live coding using:
 ```
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
+
+## Running the application in docker
+
+You can run your application in docker using:
+
+```shell script
+docker push andrel322/banking-service:v1 --QUARKUS_CLIENT_HTTP:host.docker.internal --QUARKUS_CLIENT_HTTP_PORT:8181 --QUARKUS_DATASOURCE_USERNAME:{DATASOURCE_USERNAME} --QUARKUS_DATASOURCE_PASSWORD:{DATASOURCE_PASSWORD} --QUARKUS_DATASOURCE_HOST:{DATASOURCE_HOST} --QUARKUS_DATASOURCE_PORT:{DATASOURCE_PORT}
+```
 
 ## Packaging and running the application
 
